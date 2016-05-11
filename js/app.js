@@ -43,9 +43,9 @@ $(document).ready(function(){
         diff = Math.abs(fieldValue - rand);
         addOne();
         $('#guessList').append("<li>" + fieldValue + "</li>");
-        if (fieldValue === rand) {
+        if (fieldValue == rand) {
            res("You Got It!");
-        } else if (diff <= 10) {
+        } else if (diff <= 5) {
             res("Very Hot!");
         } else if (diff <= 20) {
             res("Hot!");
@@ -56,6 +56,7 @@ $(document).ready(function(){
         } else {
             res("Very Cold!");
         };
+        $('#userGuess').val("");
     });
 
 });
