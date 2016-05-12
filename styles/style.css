@@ -247,7 +247,7 @@ input, button {
 	border-radius: 4px;
 }
 
-#guessButton {
+input.button {
 	background: #1F253D;
 	color: #95a5a6;
 	font-size: 2em;

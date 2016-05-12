@@ -38,7 +38,8 @@ $(document).ready(function(){
     var diff;
 
     /*--- Game start ---*/
-    $("#guessButton").click(function() {
+    $("form").submit(function(e) {
+        e.preventDefault();
         fieldValue = $("#userGuess").val();
         diff = Math.abs(fieldValue - rand);
         addOne();
@@ -56,9 +57,7 @@ $(document).ready(function(){
         } else {
             res("Very Cold!");
         };
-        $('#userGuess').val("");
     });
-
 });
 
 
