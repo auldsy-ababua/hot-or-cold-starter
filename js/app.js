@@ -12,8 +12,10 @@ $(document).ready(function(){
   	});
 
     /*--- Reset game ---*/
-    $(".new").click(function() {
-       location.reload();
+    $(".new").on('click', function() {
+        $('#guessList').children.remove();
+        $('#userGuess').val('');
+        rand();
     });
 
     /*--- Add 1 to Guess # ---*/
@@ -56,8 +58,8 @@ $(document).ready(function(){
             res("Cold!");
         } else {
             res("Very Cold!");
-        };
+        }
+        $('#userGuess').val('');
     });
 });
-
 
