@@ -13,9 +13,11 @@ $(document).ready(function(){
 
     /*--- Reset game ---*/
     $(".new").on('click', function() {
-        $('#guessList').children.remove();
+        count = 0;
+        $('#count').html(count);
+        $('#guessList').children().remove();
         $('#userGuess').val('');
-        rand();
+        rand = Math.floor(Math.random() * 100) + 1;
     });
 
     /*--- Add 1 to Guess # ---*/
@@ -43,6 +45,10 @@ $(document).ready(function(){
     $("form").submit(function(e) {
         e.preventDefault();
         fieldValue = $("#userGuess").val();
+        if ((fieldValue < 1)|(fieldValue > 100)){
+            alert("Please input a whole number between 1 and 100.")
+            return fieldValue;
+        };
         diff = Math.abs(fieldValue - rand);
         addOne();
         $('#guessList').append("<li>" + fieldValue + "</li>");
